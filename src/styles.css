@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050816;
+  --color-primary: #2563eb;
+  --color-accent: #00d9ff;
+  --color-text: #f8fafc;
+  --color-ink-muted: #94a3b8;
+  --color-panel: #0b1026;
+  --color-panel-soft: #111936;
+  --font-sans: "Inter", "SF Pro Display", "Segoe UI", sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+  background: #050816;
+  color: #f8fafc;
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100dvh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.28), transparent 32rem),
+    radial-gradient(circle at 88% 18%, rgba(0, 217, 255, 0.18), transparent 28rem),
+    #050816;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-5 py-20 sm:px-6 lg:px-8 lg:py-28;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.22em] text-accent;
+  }
+
+  .section-title {
+    @apply mt-4 max-w-3xl text-3xl font-semibold leading-tight text-text sm:text-4xl lg:text-5xl;
+  }
+
+  .section-copy {
+    @apply mt-5 max-w-2xl text-base leading-8 text-ink-muted sm:text-lg;
+  }
+
+  .glass-panel {
+    @apply border border-white/10 bg-white/[0.04] shadow-2xl shadow-primary/10 backdrop-blur-xl;
+  }
+
+  .gradient-border {
+    background:
+      linear-gradient(#0b1026, #0b1026) padding-box,
+      linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(0, 217, 255, 0.78)) border-box;
+    border: 1px solid transparent;
+  }
+}
